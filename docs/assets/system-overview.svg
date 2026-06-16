@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8fbff"/>
+      <stop offset="1" stop-color="#eef4ff"/>
+    </linearGradient>
+    <linearGradient id="primary" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#536dfe"/>
+      <stop offset="1" stop-color="#09a6a3"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#2d3e6e" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="640" rx="38" fill="url(#bg)"/>
+  <text x="60" y="82" font-family="Microsoft YaHei, Arial" font-size="34" font-weight="700" fill="#18245c">AI 校园商务谈判官系统概览</text>
+  <text x="60" y="124" font-family="Microsoft YaHei, Arial" font-size="18" fill="#607095">面向大学生的商务沟通、风险识别和谈判训练平台</text>
+
+  <g filter="url(#shadow)">
+    <rect x="62" y="188" width="260" height="260" rx="28" fill="#ffffff" opacity="0.92"/>
+    <circle cx="192" cy="282" r="54" fill="url(#primary)"/>
+    <text x="192" y="294" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="36" font-weight="700" fill="#fff">学生</text>
+    <text x="192" y="374" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="22" font-weight="700" fill="#18245c">训练者</text>
+    <text x="192" y="408" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="16" fill="#607095">输入目标、底线和回复</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="470" y="160" width="260" height="316" rx="30" fill="#ffffff" opacity="0.94"/>
+    <rect x="520" y="208" width="160" height="54" rx="16" fill="#eef4ff"/>
+    <text x="600" y="242" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="20" font-weight="700" fill="#3347a5">Next.js 前端</text>
+    <rect x="520" y="292" width="160" height="54" rx="16" fill="#eefdf9"/>
+    <text x="600" y="326" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="20" font-weight="700" fill="#0f766e">训练引擎</text>
+    <rect x="520" y="376" width="160" height="54" rx="16" fill="#fff7ed"/>
+    <text x="600" y="410" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="20" font-weight="700" fill="#c2410c">复盘报告</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="878" y="188" width="260" height="260" rx="28" fill="#ffffff" opacity="0.92"/>
+    <circle cx="1008" cy="282" r="54" fill="#18245c"/>
+    <text x="1008" y="294" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="30" font-weight="700" fill="#fff">AI</text>
+    <text x="1008" y="374" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="22" font-weight="700" fill="#18245c">DeepSeek 对手</text>
+    <text x="1008" y="408" text-anchor="middle" font-family="Microsoft YaHei, Arial" font-size="16" fill="#607095">扮演甲方、雇主、买家等角色</text>
+  </g>
+
+  <path d="M330 306 C382 306 410 306 462 306" stroke="#536dfe" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M738 306 C790 306 818 306 870 306" stroke="#09a6a3" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <circle cx="392" cy="306" r="8" fill="#536dfe"/>
+  <circle cx="808" cy="306" r="8" fill="#09a6a3"/>
+
+  <g font-family="Microsoft YaHei, Arial" font-size="17" fill="#405077">
+    <text x="330" y="270">自然语言对话</text>
+    <text x="760" y="270">AI 角色回复</text>
+    <text x="470" y="544">实时评分：价值表达、数据说服、风险意识、底线控制、专业度、成交概率</text>
+  </g>
+</svg>

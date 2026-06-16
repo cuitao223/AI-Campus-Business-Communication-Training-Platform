@@ -1,0 +1,411 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f6f8fb;
+  --foreground: #1d2740;
+  --line: rgba(120, 139, 180, 0.22);
+  --muted: #6d7890;
+  --primary: #4f6df5;
+  --primary-dark: #3148a8;
+  --accent: #0aa7a1;
+  --success: #15803d;
+  --warning: #b45309;
+  --danger: #b91c1c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 15% 12%, rgba(79, 109, 245, 0.11), transparent 26%),
+    radial-gradient(circle at 88% 10%, rgba(10, 167, 161, 0.09), transparent 24%),
+    linear-gradient(180deg, #fbfcff 0%, var(--background) 52%, #f1f5fb 100%);
+  color: var(--foreground);
+  font-family: Arial, "Microsoft YaHei", "PingFang SC", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(83, 109, 254, 0.2);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.container {
+  width: min(1220px, calc(100vw - 28px));
+  margin: 0 auto;
+}
+
+.app-screen {
+  min-height: calc(100vh - 56px);
+  height: calc(100vh - 56px);
+  overflow: hidden;
+}
+
+.app-scroll {
+  min-height: 0;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(79, 109, 245, 0.36) transparent;
+}
+
+.app-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.app-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.app-scroll::-webkit-scrollbar-thumb {
+  background: rgba(79, 109, 245, 0.28);
+  border-radius: 999px;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 18px 48px rgba(35, 52, 91, 0.1);
+  backdrop-filter: blur(20px) saturate(1.2);
+  transform: translateZ(0);
+  transition:
+    transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 520ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 520ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    background 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.focus-ring:focus {
+  outline: 3px solid rgba(83, 109, 254, 0.22);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4f6df5 0%, #6a5af5 56%, #0aa7a1 100%);
+  background-size: 160% 160%;
+  color: white;
+  box-shadow: 0 14px 30px rgba(83, 109, 254, 0.28);
+  transition:
+    transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 260ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 260ms ease;
+  animation: gradient-pan 8s ease-in-out infinite;
+}
+
+.btn-primary:hover {
+  filter: brightness(0.98);
+  box-shadow: 0 16px 34px rgba(83, 109, 254, 0.34);
+  transform: translateY(-2px) scale(1.01);
+}
+
+.btn-primary:active,
+.btn-secondary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(79, 109, 245, 0.22);
+  background: rgba(255, 255, 255, 0.62);
+  color: #3148a8;
+  transition:
+    transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    background 260ms ease,
+    box-shadow 260ms ease,
+    border-color 260ms ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  border-color: rgba(83, 109, 254, 0.42);
+  box-shadow: 0 12px 26px rgba(83, 109, 254, 0.12);
+}
+
+.soft-title {
+  color: #18245c;
+}
+
+.muted-text {
+  color: var(--muted);
+}
+
+.chat-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(83, 109, 254, 0.45) rgba(238, 244, 255, 0.9);
+}
+
+.compact-card p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.logo-badge {
+  position: relative;
+  isolation: isolate;
+  transition:
+    transform 360ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 360ms ease;
+}
+
+.logo-badge::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.45), transparent 42%);
+}
+
+.motion-card:hover .logo-badge,
+.group:hover .logo-badge {
+  transform: translateY(-2px) rotate(3deg) scale(1.05);
+  filter: saturate(1.08);
+}
+
+.chat-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.chat-scroll::-webkit-scrollbar-track {
+  background: rgba(238, 244, 255, 0.9);
+  border-radius: 999px;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #536dfe, #09a6a3);
+  border: 2px solid rgba(238, 244, 255, 0.9);
+  border-radius: 999px;
+}
+
+.page-shell {
+  animation: page-blur-in 720ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.reveal {
+  animation: fade-up 760ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.reveal-delay {
+  animation: fade-up 760ms cubic-bezier(0.2, 0.8, 0.2, 1) 120ms both;
+}
+
+.motion-card {
+  animation: fade-up 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  transition:
+    transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 420ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 420ms ease;
+}
+
+.motion-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 30px 70px rgba(83, 109, 254, 0.16);
+}
+
+.float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.glass-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, 0.42) 45%, transparent 70%);
+  transform: translateX(-120%);
+  animation: sheen 5.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.progress-fill {
+  transform-origin: left center;
+  animation: grow-x 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.chat-message-in {
+  animation: message-pop 320ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.soft-pulse {
+  animation: soft-pulse 2.4s ease-in-out infinite;
+}
+
+.opponent-entrance {
+  animation: opponent-card-in 720ms cubic-bezier(0.18, 0.9, 0.2, 1.08) both;
+}
+
+.voice-wave {
+  display: flex;
+  height: 14px;
+  width: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border-radius: 999px;
+  background: rgba(238, 244, 255, 0.95);
+  box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.14);
+}
+
+.voice-wave span {
+  display: block;
+  width: 3px;
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #536dfe, #09a6a3);
+  animation: voice-wave 820ms ease-in-out infinite;
+}
+
+.voice-wave span:nth-child(2) {
+  animation-delay: 120ms;
+}
+
+.voice-wave span:nth-child(3) {
+  animation-delay: 240ms;
+}
+
+@keyframes page-blur-in {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes message-pop {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes grow-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes sheen {
+  0%,
+  45% {
+    transform: translateX(-120%);
+  }
+  75%,
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes soft-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(83, 109, 254, 0.22);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(83, 109, 254, 0);
+  }
+}
+
+@keyframes opponent-card-in {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(-18px) scale(0.92);
+  }
+  62% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(4px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes voice-wave {
+  0%,
+  100% {
+    height: 4px;
+    opacity: 0.55;
+  }
+  50% {
+    height: 11px;
+    opacity: 1;
+  }
+}
+
+@keyframes gradient-pan {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+}
